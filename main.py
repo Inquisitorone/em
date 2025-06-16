@@ -126,21 +126,21 @@ async def set_order_number(message: types.Message, state: FSMContext):
         await state.update_data(order_number="Немає")
     data = await state.get_data()
     summary = (
-        f"Мова: {data['language'].upper()}
+        f"Мова: {data['language'].upper()}"
 "
-        f"Місто: {data['city']}
+        f"Місто: {data['city']}"
 "
-        f"VIN: {data['vin']}
+        f"VIN: {data['vin']}"
 "
-        f"Dlink: {data['dlink']}
+        f"Dlink: {data['dlink']}"
 "
-        f"Модель: {data['model']}
+        f"Модель: {data['model']}"
 "
-        f"Мова мультимедіа: {data['multimedia_lang']}
+        f"Мова мультимедіа: {data['multimedia_lang']}"
 "
-        f"Менеджер: {data['manager_name']}
+        f"Менеджер: {data['manager_name']}"
 "
-        f"Телефон: {data['manager_phone']}
+        f"Телефон: {data['manager_phone']}"
 "
         f"Номер замовлення: {data['order_number']}"
     )
