@@ -138,9 +138,9 @@ async def set_order_number(message: types.Message, state: FSMContext):
     f"Номер замовлення: {data['order_number']}"
 )
 
-    confirm_kb = types.ReplyKeyboardMarkup(resize_keyboard=True).add("Підтвердити", "Скасувати")
-    await message.answer("Перевірте дані:
-" + summary, reply_markup=confirm_kb)
+confirm_kb = types.ReplyKeyboardMarkup(resize_keyboard=True).add("Підтвердити", "Скасувати")
+await message.answer(f"Перевірте дані:\n\n{summary}", reply_markup=confirm_kb)
+
     await OrderState.confirm.set()
 
 @dp.message_handler(state=OrderState.confirm)
